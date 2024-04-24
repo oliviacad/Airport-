@@ -1,0 +1,14 @@
+ALTER TABLE plane
+MODIFY COLUMN plane_id VARCHAR(100);
+
+ALTER TABLE flight
+MODIFY COLUMN flight_id VARCHAR(100);
+
+ALTER TABLE crew_roster
+MODIFY COLUMN flight_id VARCHAR(100);
+
+ALTER TABLE flight
+MODIFY COLUMN plane_id VARCHAR(100);
+
+ALTER TABLE passenger_journey
+MODIFY COLUMN flight_id VARCHAR(100);
