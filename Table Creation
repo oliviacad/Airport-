@@ -1,0 +1,52 @@
+CREATE DATABASE airport;
+
+USE airport;
+
+CREATE TABLE plane (
+plane_id INTEGER PRIMARY KEY NOT NULL,
+airline VARCHAR(50) NOT NULL,
+model VARCHAR(50) NOT NULL,
+capacity INTEGER NOT NULL
+);
+
+CREATE TABLE passengers(
+passenger_id INTEGER PRIMARY KEY NOT NULL,
+forename VARCHAR(50) NOT NULL,
+surname VARCHAR(50) NOT NULL,
+passport_id VARCHAR(50) NOT NULL,
+date_of_birth DATE NOT NULL,
+allergies VARCHAR(50),
+assistance_required BOOLEAN NOT NULL
+);
+
+CREATE TABLE passenger_journey(
+passenger_journey_id INTEGER PRIMARY KEY NOT NULL,
+passenger_id INTEGER NOT NULL,
+flight_id INTEGER NOT NULL,
+seat_number VARCHAR(50) NOT NULL,
+cabin_bag BOOLEAN NOT NULL,
+checked_bag BOOLEAN NOT NULL
+);
+
+CREATE TABLE flight (
+flight_id  INT NOT NULL PRIMARY KEY,
+plane_id INT NOT NULL,
+destination VARCHAR(100) NOT NULL,
+departure_time_date DATETIME NOT NULL, 
+departure_gate VARCHAR(100),
+minutes_duration INT NOT NULL);
+
+CREATE TABLE crew (
+crew_id  INT NOT NULL PRIMARY KEY,
+passport_id VARCHAR(100) NOT NULL,
+forename VARCHAR(100) NOT NULL,
+surname VARCHAR(100) NOT NULL, 
+job_role VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE crew_roster (
+shift_id INT NOT NULL PRIMARY KEY,
+crew_id  INT NOT NULL,
+flight_id INT NOT NULL
+);
+
