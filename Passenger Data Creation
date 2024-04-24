@@ -1,0 +1,25 @@
+INSERT INTO passengers 
+(passenger_id, forename, surname, passport_id, date_of_birth, allergies, assistance_required)
+VALUES
+(1, 'Barnabas', 'Beartup', 'WG593673', '1951-05-17', null, true),
+(2, 'Cassandry', 'Birckmann', 'WI400852', '1995-12-11', null, true),
+(3, 'Isadore', 'McDavid', 'QB961305', '1964-09-25', null, false),
+(4, 'Karly', 'McCrow', 'FP820524', '1950-01-06', 'peanuts', false),
+(5, 'Doralia', 'Gorstidge', 'OB717499', '2004-03-22', null, false),
+(6, 'Lisette', 'Russen', 'KI492762', '1959-03-26', null, true),
+(7, 'Lilly', 'Valintine', 'DU531301', '1970-01-16', null, false),
+(8, 'Gayleen', 'Churchman', 'PP027949', '1981-04-03', null, true),
+(9, 'Alfie', 'Da Costa', 'UU000249', '2006-06-21', null, false),
+(10, 'Penrod', 'Halbeard', 'GM011534', '1968-04-21', null, true),
+(11, 'Oswald', 'Glynn', 'PX408242', '1966-10-15', null, false),
+(12, 'Jada', 'Benettini', 'JM378714', '1951-03-10', 'peanuts', true),
+(13, 'Neely', 'Roskilly', 'HA292447', '1976-12-15', null, true),
+(14, 'Lockwood', 'Darlison', 'DY729823', '1958-05-20', null, false),
+(15, 'Maddie', 'Pattisson', 'ZW947026', '1961-08-03', null, true),
+(16, 'Tamiko', 'Brellin', 'OI926291', '1968-11-17', null, true),
+(17, 'Griffy', 'Ivons', 'NN876357', '2003-01-19', 'gluten', false),
+(18, 'Pooh', 'Scurr', 'TM955381', '1993-02-12', null, false),
+(19, 'Chic', 'Scuse', 'ME490957', '1979-04-24', null, false),
+(20, 'Nancey', 'Suddaby', 'ZJ541428', '1969-05-09', null, true);
+
+select * FROM passengers
