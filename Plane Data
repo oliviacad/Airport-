@@ -1,0 +1,15 @@
+INSERT INTO plane
+(plane_id, airline, model, capacity)
+VALUES
+('BQ-661', 'American Airlines', 'Airbus A320', 643),
+('ER-844', 'American Airlines', 'Cessna 172', 414),
+('HH-300', 'Delta Airlines', 'Boeing 747', 373),
+('FN-813', 'American Airlines', 'Airbus A320', 414),
+('RE-794', 'American Airlines', 'Airbus A320', 904),
+('DA-174', 'Southwest Airlines', 'Embraer E190', 536),
+('IZ-156', 'Southwest Airlines', 'Airbus A320', 249),
+('ZC-542', 'JetBlue Airways', 'Boeing 747', 759),
+('TC-127', 'JetBlue Airways', 'Embraer E190', 926),
+('LQ-257', 'Southwest Airlines', 'Embraer E190', 289),
+ ('YC-422', 'Southwest Airlines', 'Cessna 172', 445),
+('PZ-691', 'United Airlines', 'Bombardier Challenger', 394);
