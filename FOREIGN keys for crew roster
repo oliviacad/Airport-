@@ -1,0 +1,8 @@
+ALTER TABLE crew_roster
+ADD FOREIGN KEY (flight_id)
+REFERENCES flight (flight_id);
+
+
+ALTER TABLE crew_roster
+ADD FOREIGN KEY (crew_id)
+REFERENCES crew (crew_id);
