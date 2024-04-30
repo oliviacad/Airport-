@@ -1,0 +1,30 @@
+DELIMITER //
+
+CREATE FUNCTION passenger_extra_care(allergies VARCHAR(50), assistance_required BOOLEAN)
+RETURNS VARCHAR(50)
+DETERMINISTIC
+BEGIN
+	DECLARE passenger_extra_care VARCHAR(50);
+    IF allergies IS NOT NULL AND assistance_required = 1 THEN
+		SET passenger_extra_care = 'Yes';
+	ELSEIF allergies IS NOT NULL AND assistance_required = 0 THEN
+		SET passenger_extra_care = 'Maybe';
+	ELSEIF allergies IS NULL AND assistance_required = 1 THEN
+		SET passenger_extra_care = 'Maybe';
+	ELSEIF allergies IS NULL AND assistance_required = 0 THEN
+		SET passenger_extra_care = 'No';
+	END IF;
+    RETURN (passenger_extra_care);
+END//
+
+DELIMITER ;
+        
+SELECT 
+	passenger_id,
+    forename,
+    surname,
+    allergies, 
+    assistance_required,
+    passenger_extra_care(allergies, assistance_required)
+FROM
+	passengers;
