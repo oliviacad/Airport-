@@ -1,0 +1,103 @@
+INSERT INTO crew_roster
+VALUES
+(1, 1, 'BA12'),
+(2, 1, 'FR5'),
+(3, 1, 'CS134'),
+(4, 1, 'RF345'),
+(5, 2, 'FR5'),
+(6, 2, 'MH122'),
+(7, 2, 'BA12'),
+(8, 3, 'VS102'),
+(9, 3, 'RD243'),
+(10, 4, 'BA12'),
+(11, 4, 'FR5'),
+(12, 4, 'CS134'),
+(13, 5, 'BA12'),
+(14, 5, 'MP132'),
+(15, 6, 'RH183'),
+(16, 6, 'BA23'),
+(17, 6, 'RF345'),
+(18, 7, 'VS102'),
+(19, 7, 'GT631'),
+(20, 7, 'CS134'),
+(21, 8, 'BA23'),
+(22, 8, 'RH183'),
+(23, 8, 'CS134'),
+(24, 9, 'GT631'),
+(25, 9, 'CS134'),
+(26, 9, 'BA23'),
+(27, 10, 'RH183'),
+(28, 10, 'RA129'),
+(29, 10, 'RF345'),
+(30, 11, 'RD243'),
+(31, 11, 'RA129'),
+(32, 12, 'MP132'),
+(33, 12, 'KH154'),
+(34, 13, 'RA129'),
+(35, 13, 'CS134'),
+(36, 14, 'BA23'),
+(37, 15, 'CN131'),
+(38, 15, 'BA12'),
+(39, 15, 'MP132'),
+(40, 16, 'VS102'),
+(41, 16, 'CS134'),
+(42, 17, 'GT631'),
+(43, 19, 'KH154'),
+(44, 19, 'BA23'),
+(45, 21, 'CN131'),
+(46, 21, 'BA12'),
+(47, 22, 'KH154'),
+(48, 23, 'CS134'),
+(49, 23, 'MH122'),
+(50, 23, 'KH154'),
+(51, 24, 'BA23'),
+(52, 25, 'CN131'),
+(53, 25, 'FR5'),
+(54, 25, 'BA23');
+
+select * from passengers;
+
+INSERT INTO passenger_journey
+VALUES
+(1, 1, 'BA12', 'B23', false, true),
+(2, 2, 'CN131', 'E5', false, true),
+(3, 3, 'FR5', 'D12', false, true),
+(4, 4, 'GT631', 'D12', true, false),
+(5, 5, 'FR5', 'A1', false, true),
+(6, 6, 'BA23', 'E5', false, true),
+(7, 7, 'VS102', 'A1', false, true),
+(8, 8, 'RF345', 'D12', false, false),
+ (9, 9, 'CN131', 'D12', false, true),
+(10, 10, 'KH154', 'A1', true, true),
+(11, 11, 'FR5', 'E5', true, false),
+(12, 12, 'MP132', 'C7', true, true),
+(13, 13, 'RF345', 'A1', false, false),
+(14, 14, 'GT631', 'B3', false, false),
+(15, 15, 'BA23', 'B3', true, false),
+(16, 16, 'MH122', 'B3', true, true),
+(17, 17, 'VS102', 'D12', true, true),
+(18, 18, 'KH154', 'B3', false, true),
+(19, 19, 'BA23', 'D12', false, false),
+(20, 20, 'FR5', 'D12', false, true);
+
+SELECT * FROM passengers;
+
+
+DELIMITER //
+
+CREATE FUNCTION flight_allergies(allergies VARCHAR(50), assistance_required BOOLEAN)
+RETURNS VARCHAR(50)
+DETERMINISTIC
+BEGIN
+	DECLARE passenger_extra_care VARCHAR(50);
+    IF allergies IS NOT NULL AND assistance_required = 1 THEN
+		SET passenger_extra_care = 'Yes';
+	ELSEIF allergies IS NOT NULL AND assistance_required = 0 THEN
+		SET passenger_extra_care = 'Maybe';
+	ELSEIF allergies IS NULL AND assistance_required = 1 THEN
+		SET passenger_extra_care = 'Maybe';
+	ELSEIF allergies IS NULL AND assistance_required = 0 THEN
+		SET passenger_extra_care = 'No';
+	END IF;
+    RETURN (aler
+        
