@@ -1,0 +1,22 @@
+INSERT INTO passenger_journey
+VALUES
+(1, 1, 'BA12', 'B23', false, true),
+(2, 2, 'CN131', 'E5', false, true),
+(3, 3, 'FR5', 'D12', false, true),
+(4, 4, 'GT631', 'D12', true, false),
+(5, 5, 'FR5', 'A1', false, true),
+(6, 6, 'BA23', 'E5', false, true),
+(7, 7, 'VS102', 'A1', false, true),
+(8, 8, 'RF345', 'D12', false, false),
+ (9, 9, 'CN131', 'D12', false, true),
+(10, 10, 'KH154', 'A1', true, true),
+(11, 11, 'FR5', 'E5', true, false),
+(12, 12, 'MP132', 'C7', true, true),
+(13, 13, 'RF345', 'A1', false, false),
+(14, 14, 'GT631', 'B3', false, false),
+(15, 15, 'BA23', 'B3', true, false),
+(16, 16, 'MH122', 'B3', true, true),
+(17, 17, 'VS102', 'D12', true, true),
+(18, 18, 'KH154', 'B3', false, true),
+(19, 19, 'BA23', 'D12', false, false),
+(20, 20, 'FR5', 'D12', false, true);
